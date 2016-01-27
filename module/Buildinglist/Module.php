@@ -2,33 +2,20 @@
 /**
  * Zend Framework (http://framework.zend.com/)
  *
- * @link      http://github.com/zendframework/Building for the canonical source repository
+ * @link      http://github.com/zendframework/Buildinglist for the canonical source repository
  * @copyright Copyright (c) 2005-2015 Zend Technologies USA Inc. (http://www.zend.com)
  * @license   http://framework.zend.com/license/new-bsd New BSD License
  */
 
-namespace Building;
+namespace Buildinglist;
 
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
-use Building\Model\ItemMapper;
+use Buildinglist\Model\BuildingMapper;
 
 class Module implements AutoloaderProviderInterface
 {
-    public function getServiceConfig()
-    {
-        return array(
-            'factories' => array(
-                'ItemMapper' => function ($sm) {
-                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-                    $mapper = new ItemMapper($dbAdapter);
-                    return $mapper;
-                }
-            ),
-        );
-    }
-    
     public function getAutoloaderConfig()
     {
         return array(
@@ -56,5 +43,18 @@ class Module implements AutoloaderProviderInterface
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+    }
+    
+    public function getServiceConfig()
+    {
+        return array(
+            'factories' => array(
+                'BuildingMapper' => function ($sm) {
+                $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                $mapper = new BuildingMapper($dbAdapter);
+                return $mapper;
+                }
+                ),
+                );
     }
 }

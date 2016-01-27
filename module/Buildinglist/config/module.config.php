@@ -2,21 +2,21 @@
 return array(
     'controllers' => array(
         'invokables' => array(
-            'Building\Controller\Item' => 'Building\Controller\ItemController',
+            'Buildinglist\Controller\Building' => 'Buildinglist\Controller\BuildingController',
         ),
     ),
     'router' => array(
         'routes' => array(
-            'item' => array(
+            'building' => array(
                 'type'    => 'Segment',
                 'options' => array(
                     // Change this to something specific to your module
-                    'route'    => '/item[/:action[/:id]]',
+                    'route'    => '/building[/:action[/:id]]',
                     'defaults' => array(
                         // Change this value to reflect the namespace in which
                         // the controllers for your module are found
-                        '__NAMESPACE__' => 'Building\Controller',
-                        'controller'    => 'Item',
+                        '__NAMESPACE__' => 'Buildinglist\Controller',
+                        'controller'    => 'Building',
                         'action'        => 'index',
                     ),
                     'constraints' => array(
@@ -29,7 +29,7 @@ return array(
     ),
     'view_manager' => array(
         'template_path_stack' => array(
-            'Building' => __DIR__ . '/../view',
+            'Buildinglist' => __DIR__ . '/../view',
         ),
     ),
 );

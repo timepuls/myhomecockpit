@@ -1,14 +1,14 @@
 <?php
-namespace Building\Model;
+namespace Buildinglist\Model;
 
 use Zend\Db\Adapter\Adapter;
-use Building\Model\ItemEntity;
+use Buildinglist\Model\BuildingEntity;
 use Zend\Stdlib\Hydrator\ClassMethods;
 use Zend\Db\Sql\Sql;
 use Zend\Db\Sql\Select;
 use Zend\Db\ResultSet\HydratingResultSet;
 
-class ItemMapper
+class BuildingMapper
 {
     protected $tableName = 'building_item';
     protected $dbAdapter;
@@ -29,7 +29,7 @@ class ItemMapper
         $statement = $this->sql->prepareStatementForSqlObject($select);
         $results = $statement->execute();
 
-        $entityPrototype = new ItemEntity();
+        $entityPrototype = new BuildingEntity();
         $hydrator = new ClassMethods();
         $resultset = new HydratingResultSet($hydrator, $entityPrototype);
         $resultset->initialize($results);

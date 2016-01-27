@@ -1,7 +1,7 @@
 <?php
-namespace Building\Model;
+namespace Buildinglist\Model;
 
-class ItemEntity
+class BuildingEntity
 {
     protected $id;
     protected $user;
@@ -39,12 +39,12 @@ class ItemEntity
     {
         return $this->name;
     }
-    
+
     public function setName($Value)
     {
         $this->name = $Value;
     }
-    
+
     public function getCreated()
     {
         return $this->created;
