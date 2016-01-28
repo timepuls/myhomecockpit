@@ -11,6 +11,8 @@ namespace Buildinglist\Controller;
 
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Buildinglist\Model\BuildingEntity;
+use Buildinglist\Form\BuildingForm;
 
 class BuildingController extends AbstractActionController
 {
@@ -31,5 +33,24 @@ class BuildingController extends AbstractActionController
     {
         $sm = $this->getServiceLocator();
         return $sm->get('BuildingMapper');
+    }
+    
+    public function addAction()
+    {
+        $form = new BuildingForm();
+        $building = new BuildingEntity();
+        $form->bind($building);
+    
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $form->setData($request->getPost());
+            if ($form->isValid()) {
+                $this->getBuildingMapper()->saveBuilding($building);
+    
+                // Redirect to list of buildings
+                return $this->redirect()->toRoute('building');
+            }
+        }
+        return array('form' => $form);
     }
 }
