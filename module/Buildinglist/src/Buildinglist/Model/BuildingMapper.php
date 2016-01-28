@@ -35,4 +35,30 @@ class BuildingMapper
         $resultset->initialize($results);
         return $resultset;
     }
+    
+    public function saveBuilding(BuildingEntity $building)
+    {
+        $hydrator = new ClassMethods();
+        $data = $hydrator->extract($building);
+    
+        if ($building->getId()) {
+            // update action
+            $action = $this->sql->update();
+            $action->set($data);
+            $action->where(array('id' => $building->getId()));
+        } else {
+            // insert action
+            $action = $this->sql->insert();
+            unset($data['id']);
+            $action->values($data);
+        }
+        $statement = $this->sql->prepareStatementForSqlObject($action);
+        $result = $statement->execute();
+    
+        if (!$building->getId()) {
+            $building->setId($result->getGeneratedValue());
+        }
+        return $result;
+    
+    }
 }
