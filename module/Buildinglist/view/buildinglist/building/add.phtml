@@ -1,0 +1,24 @@
+<?php
+$title = 'Add new building';
+$this->headTitle($title);
+?>
+ <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+ <?php
+ $form = $this->form;
+ $form->setAttribute('action', $this->url('building', array('action' => 'add')));
+ $form->get('submit')->setAttribute('value', 'Add');
+ $form->prepare();
+
+ echo $this->form()->openTag($form);
+ echo $this->formHidden($form->get('id'));
+ echo $this->formHidden($form->get('user'));
+ echo $this->formRow($form->get('name'));
+ echo $this->formHidden($form->get('created'));
+ echo $this->formHidden($form->get('updated'));
+ ?>
+ <div>
+ <?php echo $this->formInput($form->get('submit')); ?>
+ </div>
+ <?php
+ echo $this->form()->closeTag($form);
