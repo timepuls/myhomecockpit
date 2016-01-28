@@ -19,7 +19,7 @@ class BuildingFilter extends InputFilter
             'name' => 'user',
             'required' => true,
             'filters' => array(
-                array('name' => 'Strng'),
+                array('name' => 'String'),
             ),
         ));
         
