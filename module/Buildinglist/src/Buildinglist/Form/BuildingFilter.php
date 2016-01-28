@@ -14,22 +14,12 @@ class BuildingFilter extends InputFilter
                 array('name' => 'Int'),
             ),
         ));
-
+        
         $this->add(array(
             'name' => 'user',
             'required' => true,
             'filters' => array(
-                array('name' => 'StripTags'),
-                array('name' => 'StringTrim'),
-            ),
-            'validators' => array(
-                array(
-                    'name' => 'StringLength',
-                    'options' => array(
-                        'encoding' => 'UTF-8',
-                        'max' => 100
-                    ),
-                ),
+                array('name' => 'Strng'),
             ),
         ));
         
@@ -55,17 +45,7 @@ class BuildingFilter extends InputFilter
             'name' => 'created',
             'required' => true,
             'filters' => array(
-                array('name' => 'StripTags'),
-                array('name' => 'StringTrim'),
-            ),
-            'validators' => array(
-                array(
-                    'name' => 'StringLength',
-                    'options' => array(
-                        'encoding' => 'UTF-8',
-                        'max' => 100
-                    ),
-                ),
+                array('name' => 'DateTime'),
             ),
         ));
         
@@ -73,18 +53,9 @@ class BuildingFilter extends InputFilter
             'name' => 'updated',
             'required' => true,
             'filters' => array(
-                array('name' => 'StripTags'),
-                array('name' => 'StringTrim'),
-            ),
-            'validators' => array(
-                array(
-                    'name' => 'StringLength',
-                    'options' => array(
-                        'encoding' => 'UTF-8',
-                        'max' => 100
-                    ),
-                ),
+                array('name' => 'DateTime'),
             ),
         ));
+        
     }
 }
