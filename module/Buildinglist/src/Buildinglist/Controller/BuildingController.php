@@ -45,7 +45,7 @@ class BuildingController extends AbstractActionController
         if ($request->isPost()) {
             $form->setData($request->getPost());
             if ($form->isValid()) {
-               // $this->getBuildingMapper()->saveBuilding($building);
+                $this->getBuildingMapper()->saveBuilding($building);
     
                 // Redirect to list of buildings
                 return $this->redirect()->toRoute('building');
