@@ -11,8 +11,8 @@ class BuildingEntity
 
     public function __construct()
     {
+        date_default_timezone_set('Europe/Zurich');
         $this->created = date('Y-m-d H:i:s');
-        $this->created->setTimeZone(new DateTimeZone('Switzerland/Zurich'));
         $this->updated = date('Y-m-d H:i:s'); //date_create("2013-06-30 07:00:01");
     }
 
