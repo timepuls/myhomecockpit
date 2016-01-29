@@ -11,11 +11,11 @@ $this->headTitle($title);
  $form->prepare();
 
  echo $this->form()->openTag($form);
- echo $this->formHidden($form->get('id'));
- echo $this->formHidden($form->get('user'));
+ echo $this->formRow($form->get('id'));
+ echo $this->formRow($form->get('user'));
  echo $this->formRow($form->get('name'));
- echo $this->formHidden($form->get('created'));
- echo $this->formHidden($form->get('updated'));
+ echo $this->formRow($form->get('created'));
+ echo $this->formRow($form->get('updated'));
  ?>
  <div>
  <?php echo $this->formInput($form->get('submit')); ?>
