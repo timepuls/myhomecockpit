@@ -18,9 +18,6 @@ class BuildingFilter extends InputFilter
         $this->add(array(
             'name' => 'user',
             'required' => true,
-            'filters' => array(
-                array('name' => 'String'),
-            ),
         ));
         
         $this->add(array(
