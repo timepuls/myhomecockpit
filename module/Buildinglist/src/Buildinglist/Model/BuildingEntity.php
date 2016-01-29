@@ -12,7 +12,7 @@ class BuildingEntity
     public function __construct()
     {
         $this->created = date('Y-m-d H:i:s');
-        $this->updated = date('Y-m-d H:i:s');
+        $this->updated = date('Y-m-d H:i:s', '2015-12-20 22:00:10');
     }
 
     public function getId()
