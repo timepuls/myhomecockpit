@@ -11,8 +11,9 @@ class BuildingEntity
 
     public function __construct()
     {
+        date_default_timezone_set('GMT+1');
         $this->created = date('Y-m-d H:i:s');
-        $this->updated = date('Y-m-d H:i:s', '2015-12-20 22:00:10');
+        $this->updated = date_create("2013-06-30 07:00:01");
     }
 
     public function getId()
