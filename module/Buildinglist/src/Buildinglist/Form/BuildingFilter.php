@@ -41,17 +41,11 @@ class BuildingFilter extends InputFilter
         $this->add(array(
             'name' => 'created',
             'required' => true,
-            'filters' => array(
-                array('name' => 'DateTime'),
-            ),
         ));
         
         $this->add(array(
             'name' => 'updated',
             'required' => true,
-            'filters' => array(
-                array('name' => 'DateTime'),
-            ),
         ));
         
     }
