@@ -49,8 +49,7 @@ class BuildingMapper
         } else {
             // insert action
             $action = $this->sql->insert();
-            $data['id'] = '';
-            //unset($data['id']);
+            unset($data['id']);
             $action->values($data);
         }
         $statement = $this->sql->prepareStatementForSqlObject($action);
