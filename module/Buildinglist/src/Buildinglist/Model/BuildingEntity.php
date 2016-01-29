@@ -63,9 +63,10 @@ class BuildingEntity
         return $this->updated;
     }
     
-    public function setUpdated()
+    public function setUpdated($Value)
     {
-        date_default_timezone_set('Europe/Zurich');
-        $this->updated = date('Y-m-d H:i:s');
+        //date_default_timezone_set('Europe/Zurich');
+        //$this->updated = date('Y-m-d H:i:s');
+        $this->updated = $Value;
     }
 }
