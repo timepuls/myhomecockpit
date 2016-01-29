@@ -11,6 +11,8 @@ class BuildingEntity
 
     public function __construct()
     {
+        $this->user = 'admin';
+        
         date_default_timezone_set('Europe/Zurich');
         $this->created = date('Y-m-d H:i:s');
         $this->updated = date('Y-m-d H:i:s');
