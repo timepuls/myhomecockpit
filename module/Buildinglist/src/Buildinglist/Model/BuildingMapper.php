@@ -56,7 +56,7 @@ class BuildingMapper
         $result = $statement->execute();
     
         if (!$building->getId()) {
-            $building->setId($result->getLastGeneratedValue());
+            $building->setId($result->getGeneratedValue());
         }
         return $result;
     
