@@ -17,11 +17,25 @@ class BuildingForm extends Form
         $this->add(array(
             'name' => 'id',
             'type' => 'text',
+            'options' => array(
+                'label' => 'ID',
+            ),
+            'attributes' => array(
+                'id' => 'name',
+                'maxlength' => 3,
+            )
         ));
 
         $this->add(array(
             'name' => 'user',
             'type' => 'text',
+            'options' => array(
+                'label' => 'user',
+            ),
+            'attributes' => array(
+                'id' => 'name',
+                'maxlength' => 100,
+            )
         ));
         
         $this->add(array(
@@ -39,11 +53,25 @@ class BuildingForm extends Form
         $this->add(array(
             'name' => 'created',
             'type' => 'text',
+            'options' => array(
+                'label' => 'Created',
+            ),
+            'attributes' => array(
+                'id' => 'name',
+                'maxlength' => 30,
+            ) 
         ));
 
         $this->add(array(
             'name' => 'updated',
             'type' => 'text',
+            'options' => array(
+                'label' => 'Updated',
+            ),
+            'attributes' => array(
+                'id' => 'name',
+                'maxlength' => 30,
+            )
         ));
         
         $this->add(array(
