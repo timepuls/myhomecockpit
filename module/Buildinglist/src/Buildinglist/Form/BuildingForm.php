@@ -16,14 +16,7 @@ class BuildingForm extends Form
 
         $this->add(array(
             'name' => 'id',
-            'type' => 'text',
-            'options' => array(
-                'label' => 'ID',
-            ),
-            'attributes' => array(
-                'id' => 'name',
-                'maxlength' => 3,
-            )
+            'type' => 'hidden',
         ));
 
         $this->add(array(
