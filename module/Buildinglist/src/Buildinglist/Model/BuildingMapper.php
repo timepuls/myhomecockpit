@@ -56,7 +56,7 @@ class BuildingMapper
         $result = $statement->execute();
     
         if (!$building->getId()) {
-            $building->setId('0');
+            $building->setId('3');
         }
         return $result;
     
