@@ -58,7 +58,7 @@ class BuildingForm extends Form
             ),
             'attributes' => array(
                 'id' => 'name',
-                'maxlength' => 30,
+                'maxlength' => 19,
             ) 
         ));
 
@@ -70,7 +70,7 @@ class BuildingForm extends Form
             ),
             'attributes' => array(
                 'id' => 'name',
-                'maxlength' => 30,
+                'maxlength' => 19,
             )
         ));
         
