@@ -13,7 +13,7 @@ class BuildingEntity
     {
         date_default_timezone_set('Europe/Zurich');
         $this->created = date('Y-m-d H:i:s');
-        $this->updated = date_format(new date_create('2013-06-30 07:00:01'));
+        $this->updated = date('Y-m-d H:i:s');
     }
 
     public function getId()
@@ -61,8 +61,9 @@ class BuildingEntity
         return $this->updated;
     }
     
-    public function setUpdated($Value)
+    public function setUpdated()
     {
-        $this->updated = $Value;
+        date_default_timezone_set('Europe/Zurich');
+        $this->updated = date('Y-m-d H:i:s');
     }
 }
