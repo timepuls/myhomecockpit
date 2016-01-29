@@ -50,13 +50,14 @@ class BuildingMapper
             // insert action
             $action = $this->sql->insert();
             unset($data['id']);
+            $building->setId($result->getGeneratedValue());
             $action->values($data);
         }
         $statement = $this->sql->prepareStatementForSqlObject($action);
         $result = $statement->execute();
     
         if (!$building->getId()) {
-            $building->setId('3');
+            $building->setId($result->getGeneratedValue());
         }
         return $result;
     
