@@ -58,6 +58,7 @@ class BuildingMapper
         if (!$building->getId()) {
             $building->setId($result->getGeneratedValue());
         }
+        echo $building->getId();
         return $result;
     
     }
