@@ -16,12 +16,12 @@ class BuildingForm extends Form
 
         $this->add(array(
             'name' => 'id',
-            'type' => 'hidden',
+            'type' => 'text',
         ));
 
         $this->add(array(
             'name' => 'user',
-            'type' => 'hidden',
+            'type' => 'text',
         ));
         
         $this->add(array(
@@ -38,12 +38,12 @@ class BuildingForm extends Form
 
         $this->add(array(
             'name' => 'created',
-            'type' => 'hidden',
+            'type' => 'text',
         ));
 
         $this->add(array(
             'name' => 'updated',
-            'type' => 'hidden',
+            'type' => 'text',
         ));
         
         $this->add(array(
