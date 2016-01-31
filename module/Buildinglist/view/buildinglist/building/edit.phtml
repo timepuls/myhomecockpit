@@ -6,17 +6,15 @@ $this->headTitle($title);
 
 <table class="table">
  	<tr>
-     <?php
-        $form = $this->form;
-        $url = $this->url('building', array('action' => 'edit', 'id' => $id));
-        $form->setAttribute('action', $url);
-        $form->get('submit')->setAttribute('value', 'Edit');
-        $form->prepare();
-        ?>
          <td><?php echo $this->escapeHtml($building->getId()); ?></td>
          <td><?php echo $this->escapeHtml($building->getUser()); ?></td>
          <td>
          	<?php
+         	$form = $this->form;
+         	$url = $this->url('building', array('action' => 'edit', 'id' => $id));
+         	$form->setAttribute('action', $url);
+         	$form->get('submit')->setAttribute('value', 'Edit');
+         	$form->prepare();
          	echo $this->form()->openTag($form);
          	echo $this->formHidden($form->get('id'));
          	echo $this->formHidden($form->get('user'));
