@@ -53,4 +53,29 @@ class BuildingController extends AbstractActionController
         }
         return array('form' => $form);
     }
+    
+    public function editAction()
+    {
+        $id = (int)$this->params('id');
+        if (!$id) {
+            return $this->redirect()->toRoute('task', array('action'=>'add'));
+        }
+        $building = $this->getBuildingMapper()->getBuilding($id);
+        
+        $form = new BuildingForm();
+        $building = new BuildingEntity();
+        $form->bind($building);
+    
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $form->setData($request->getPost());
+            if ($form->isValid()) {
+                $this->getBuildingMapper()->saveBuilding($building);
+    
+                // Redirect to list of buildings
+                return $this->redirect()->toRoute('building');
+            }
+        }
+        return array('id' => $id, 'form' => $form);
+    }
 }

@@ -59,6 +59,23 @@ class BuildingMapper
             $building->setId($result->getGeneratedValue());
         }
         return $result;
+    }
     
+    public function getBuilding($id)
+    {
+        $select = $this->sql->select();
+        $select->where(array('id' => $id));
+    
+        $statement = $this->sql->prepareStatementForSqlObject($select);
+        $result = $statement->execute()->current();
+        if (!$result){
+            return null;
+        }
+    
+        $building = new BuildingEntity();
+        $hydrator = new ClassMethods();
+        $hydrator->hydrate($result, $building);
+        
+        return $building;
     }
 }
