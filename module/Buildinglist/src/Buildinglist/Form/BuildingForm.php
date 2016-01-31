@@ -21,14 +21,10 @@ class BuildingForm extends Form
 
         $this->add(array(
             'name' => 'user',
-            'type' => 'text',
+            'type' => 'Zend\Form\Element\Textarea',
             'options' => array(
-                'label' => 'user',
+                'label' => 'User',
             ),
-            'attributes' => array(
-                'id' => 'name',
-                'maxlength' => 100,
-            )
         ));
         
         $this->add(array(
