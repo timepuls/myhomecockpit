@@ -21,7 +21,7 @@ class BuildingForm extends Form
 
         $this->add(array(
             'name' => 'user',
-            'type' => 'text',
+            'type' => 'readonly',
             'options' => array(
                 'label' => 'User',
             ),
