@@ -39,15 +39,17 @@ class BuildingMapper
     public function saveBuilding(BuildingEntity $building)
     {
         $hydrator = new ClassMethods();
-        $data = $hydrator->extract($building);
     
         if ($building->getId()) {
             // update action
+            $building->setUpdated();
+            $data = $hydrator->extract($building);
             $action = $this->sql->update();
             $action->set($data);
             $action->where(array('id' => $building->getId()));
         } else {
             // insert action
+            $data = $hydrator->extract($building);
             $action = $this->sql->insert();
             unset($data['id']);
             $action->values($data);
