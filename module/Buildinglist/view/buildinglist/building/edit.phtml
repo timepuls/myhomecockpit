@@ -6,7 +6,8 @@ $this->headTitle($title);
 
  <?php
  $form = $this->form;
- $form->setAttribute('action', $this->url('building', array('action' => 'edit', 'id' => $id)));
+ $url = $this->url('building', array('action' => 'edit', 'id' => $id));
+ $form->setAttribute('action', $url);
  $form->get('submit')->setAttribute('value', 'Edit');
  $form->prepare();
 
