@@ -64,7 +64,7 @@ class BuildingMapper
     public function getBuilding($id)
     {
         $select = $this->sql->select();
-        $select->where(array('id' => '15'));
+        $select->where(array('id' => $id));
     
         $statement = $this->sql->prepareStatementForSqlObject($select);
         $result = $statement->execute()->current();

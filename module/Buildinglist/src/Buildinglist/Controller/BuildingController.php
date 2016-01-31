@@ -63,7 +63,6 @@ class BuildingController extends AbstractActionController
         $building = $this->getBuildingMapper()->getBuilding($id);
         
         $form = new BuildingForm();
-        $building = new BuildingEntity();
         $form->bind($building);
     
         $request = $this->getRequest();
