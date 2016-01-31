@@ -63,9 +63,9 @@ class BuildingEntity
         return $this->updated;
     }
     
-    public function setUpdated($value)
+    public function setUpdated($Value)
     {
-        if (!$value) {
+        if (!$Value) {
             date_default_timezone_set('Europe/Zurich');
             $this->updated = date('Y-m-d H:i:s');
         } else {
