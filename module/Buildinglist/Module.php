@@ -16,6 +16,20 @@ use Buildinglist\Model\BuildingMapper;
 
 class Module implements AutoloaderProviderInterface
 {
+    
+    public function getServiceConfig()
+    {
+        return array(
+            'factories' => array(
+                'BuildingMapper' => function ($sm) {
+                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                    $mapper = new BuildingMapper($dbAdapter);
+                    return $mapper;
+                }
+            ),
+        );
+    }
+    
     public function getAutoloaderConfig()
     {
         return array(
@@ -45,16 +59,4 @@ class Module implements AutoloaderProviderInterface
         $moduleRouteListener->attach($eventManager);
     }
     
-    public function getServiceConfig()
-    {
-        return array(
-            'factories' => array(
-                'BuildingMapper' => function ($sm) {
-                $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-                $mapper = new BuildingMapper($dbAdapter);
-                return $mapper;
-                }
-                ),
-                );
-    }
 }
