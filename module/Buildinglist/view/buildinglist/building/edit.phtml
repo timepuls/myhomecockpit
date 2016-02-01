@@ -10,11 +10,13 @@
     echo "</strong>";
     echo $this->escapeHtml($building->getId());
     echo "<br />";
+    echo "<br />";
 
     echo "<strong>";
     echo $this->escapeHtml("User ");
     echo "</strong>";
     echo $this->escapeHtml($building->getUser());
+    echo "<br />";
     echo "<br />";
 
     $building = $this->building;
@@ -30,17 +32,20 @@
     echo $this->formHidden($form->get('created'));
     echo $this->formHidden($form->get('updated'));
     echo "<br />";
+    echo "<br />";
  
     echo "<strong>";
     echo $this->escapeHtml("Created ");
     echo "</strong>";
     echo $this->escapeHtml($building->getCreated());
     echo "<br />";
+    echo "<br />";
 
     echo "<strong>";
     echo $this->escapeHtml("Updated ");
     echo "</strong>";
     echo $this->escapeHtml($building->getUpdated());
+    echo "<br />";
     echo "<br />";
 ?>
 
