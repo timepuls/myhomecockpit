@@ -7,9 +7,13 @@
 
 <table class="table">
 	<tr>
- 		<td><?php echo "<strong>ID </strong>";
-           echo $this->escapeHtml($building->getId()); 
-        ?></td>
+ 		<td>
+ 			<?php 
+ 		     echo "<strong>ID </strong>";
+ 		     echo $this->escapeHtml("<strong>ID </strong>");
+             echo $this->escapeHtml($building->getId()); 
+            ?>
+        </td>
  <td>
  <?php
  $building = $this->building;
