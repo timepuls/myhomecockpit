@@ -75,6 +75,6 @@ class BuildingController extends AbstractActionController
                 return $this->redirect()->toRoute('building');
             }
         }
-        return array('building' => $building, 'form' => $form);
+        return array('id' => $id, 'building' => $building, 'form' => $form);
     }
 }
