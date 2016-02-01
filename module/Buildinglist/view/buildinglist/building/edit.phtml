@@ -43,7 +43,11 @@
                 $form->get('submit')->setAttribute('value', 'Edit');
                 $form->prepare();
                 echo $this->form()->openTag($form);
+                echo $this->formHidden($form->get('id'));
+                echo $this->formHidden($form->get('user'));
                 echo $this->formRow($form->get('name'));
+                echo $this->formHidden($form->get('created'));
+                echo $this->formHidden($form->get('updated'));
             ?>
         </td>
     </tr>
