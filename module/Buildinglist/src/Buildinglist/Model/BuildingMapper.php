@@ -89,6 +89,6 @@ class BuildingMapper
         $statement = $this->sql->prepareStatementForSqlObject($delete);
         $result = $statement->execute();
    
-        return;
+        return $result;
     }
 }
