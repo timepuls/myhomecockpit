@@ -4,18 +4,20 @@
  ?>
  <h1><?php echo $this->escapeHtml($title); ?></h1>
 
-
-<table class="table">
-	<tr>
- 		<td>
- 			<?php 
- 		     echo "<strong>";
- 		     echo $this->escapeHtml("ID ");
- 		     echo "</strong>";
-             echo $this->escapeHtml($building->getId()); 
-            ?>
-        </td>
- <td>
+<?php 
+    echo "<strong>";
+    echo $this->escapeHtml("ID ");
+    echo "</strong>";
+    echo $this->escapeHtml($building->getId()); 
+ ?>
+ 
+ <?php 
+    echo "<strong>";
+    echo $this->escapeHtml("User ");
+    echo "</strong>";
+    echo $this->escapeHtml($building->getUser()); 
+ ?>
+ 
  <?php
  $building = $this->building;
  $form = $this->form;
@@ -25,14 +27,8 @@
  $form->prepare();
 
  echo $this->form()->openTag($form);
- echo $this->formRow($form->get('user'));
  echo $this->formRow($form->get('name'));
- echo $this->formRow($form->get('created'));
- echo $this->formRow($form->get('updated'));
  ?>
- </td>
- </tr>
- </table>
  <div>
  <?php echo $this->formInput($form->get('submit')); ?>
  </div>
