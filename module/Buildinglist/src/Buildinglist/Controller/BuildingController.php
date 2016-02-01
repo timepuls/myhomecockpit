@@ -77,4 +77,18 @@ class BuildingController extends AbstractActionController
         }
         return array('id' => $id, 'building' => $building, 'form' => $form);
     }
+    
+    public function deleteAction()
+    {
+        $id = (int)$this->params('id');
+        if (!$id) {
+            return $this->redirect()->toRoute('building');
+        }
+        
+        $this->getBuildingMapper()->deleteBuilding($id);
+    
+        // Redirect to list of buildings
+        return $this->redirect()->toRoute('building');
+    }
+    
 }

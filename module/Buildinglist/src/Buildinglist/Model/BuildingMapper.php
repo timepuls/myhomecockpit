@@ -80,4 +80,15 @@ class BuildingMapper
         
         return $building;
     }
+    
+    public function deleteBuilding($id)
+    {
+        $delete = $this->sql->delete();
+        $delete->where(array('id' => $id));
+    
+        $statement = $this->sql->prepareStatementForSqlObject($delete);
+        $result = $statement->execute();
+   
+        return;
+    }
 }
