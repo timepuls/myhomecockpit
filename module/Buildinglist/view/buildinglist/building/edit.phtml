@@ -4,31 +4,78 @@
  ?>
  <h1><?php echo $this->escapeHtml($title); ?></h1>
 
-<?php 
-    echo "<strong>";
-    echo $this->escapeHtml("ID ");
-    echo "</strong>";
-    echo $this->escapeHtml($building->getId()); 
- ?>
- 
- <?php 
-    echo "<strong>";
-    echo $this->escapeHtml("User ");
-    echo "</strong>";
-    echo $this->escapeHtml($building->getUser()); 
- ?>
- 
- <?php
- $building = $this->building;
- $form = $this->form;
- $url = $this->url('building', array('action' => 'edit', 'id' => $id));
- $form->setAttribute('action', $url);
- $form->get('submit')->setAttribute('value', 'Edit');
- $form->prepare();
-
- echo $this->form()->openTag($form);
- echo $this->formRow($form->get('name'));
- ?>
+<table class="table">
+	<tr>
+		<td>
+			<?php 
+                echo "<strong>";
+                echo $this->escapeHtml("ID ");
+                echo "</strong>";
+            ?>
+     	</td>
+     	<td>
+			<?php
+                echo $this->escapeHtml($building->getId()); 
+            ?>
+       	</td>
+  	</tr>
+ 	<tr>
+		<td>
+			<?php 
+                echo "<strong>";
+                echo $this->escapeHtml("User ");
+                echo "</strong>";
+            ?>
+     	</td>
+     	<td>
+			<?php
+                echo $this->escapeHtml($building->getUser()); 
+            ?>
+       	</td>
+  	</tr>
+ 	<tr>
+		<td>
+			<?php
+                $building = $this->building;
+                $form = $this->form;
+                $url = $this->url('building', array('action' => 'edit', 'id' => $id));
+                $form->setAttribute('action', $url);
+                $form->get('submit')->setAttribute('value', 'Edit');
+                $form->prepare();
+                echo $this->form()->openTag($form);
+                echo $this->formRow($form->get('name'));
+            ?>
+        </td>
+    </tr>
+    <tr>
+		<td>
+			<?php 
+                echo "<strong>";
+                echo $this->escapeHtml("Created ");
+                echo "</strong>";
+            ?>
+     	</td>
+     	<td>
+			<?php
+                echo $this->escapeHtml($building->getCreated()); 
+            ?>
+       	</td>
+  	</tr> 
+  	<tr>
+		<td>
+			<?php 
+                echo "<strong>";
+                echo $this->escapeHtml("Updated ");
+                echo "</strong>";
+            ?>
+     	</td>
+     	<td>
+			<?php
+                echo $this->escapeHtml($building->getUpdated()); 
+            ?>
+       	</td>
+  	</tr>
+</table>
  <div>
  <?php echo $this->formInput($form->get('submit')); ?>
  </div>
