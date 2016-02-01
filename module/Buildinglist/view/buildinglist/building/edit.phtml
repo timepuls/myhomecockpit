@@ -12,6 +12,7 @@
  $form->get('submit')->setAttribute('value', 'Edit');
  $form->prepare();
 
+ echo $building->getId();
  echo $this->form()->openTag($form);
  echo $this->formHidden($form->get('id'));
  echo $this->formRow($form->get('user'));
