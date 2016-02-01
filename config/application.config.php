@@ -10,6 +10,8 @@ return array(
     'modules' => array(
         'Application',
         'Buildinglist',
+        'ZfcBase',
+        'ZfcUser',
     ),
 
     // These are various options for the listeners attached to the ModuleManager
