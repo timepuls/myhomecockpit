@@ -58,7 +58,7 @@ class BuildingController extends AbstractActionController
     {
         $id = (int)$this->params('id');
         if (!$id) {
-            return $this->redirect()->toRoute('task', array('action'=>'add'));
+            return $this->redirect()->toRoute('building', array('action'=>'add'));
         }
         $building = $this->getBuildingMapper()->getBuilding($id);
         
