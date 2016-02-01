@@ -6,8 +6,10 @@
 
 
 <table class="table">
- <tr>
- <td><?php echo $this->escapeHtml($building->getId()); ?></td>
+	<tr>
+ 		<td><?php echo "<strong>\"ID \"</strong>";
+           echo $this->escapeHtml($building->getId()); 
+        ?></td>
  <td>
  <?php
  $building = $this->building;
