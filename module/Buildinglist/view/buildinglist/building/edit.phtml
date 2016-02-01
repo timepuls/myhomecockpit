@@ -4,7 +4,6 @@
  ?>
  <h1><?php echo $this->escapeHtml($title); ?></h1>
 
-
 			<?php 
                 echo "<strong>";
                 echo $this->escapeHtml("ID ");
@@ -17,10 +16,8 @@
                 echo "<strong>";
                 echo $this->escapeHtml("User ");
                 echo "</strong>";
-            ?>
-
-			<?php
-                echo $this->escapeHtml($building->getUser()); 
+                echo $this->escapeHtml($building->getUser());
+                echo "<br />";
             ?>
 
 			<?php
@@ -42,24 +39,23 @@
                 echo "<strong>";
                 echo $this->escapeHtml("Created ");
                 echo "</strong>";
-            ?>
-
-			<?php
-                echo $this->escapeHtml($building->getCreated()); 
+                echo $this->escapeHtml($building->getCreated());
+                echo "<br />";
             ?>
 
 			<?php 
                 echo "<strong>";
                 echo $this->escapeHtml("Updated ");
                 echo "</strong>";
-            ?>
-
-			<?php
-                echo $this->escapeHtml($building->getUpdated()); 
+                echo $this->escapeHtml($building->getUpdated());
+                echo "<br />";
             ?>
 
  <div>
- <?php echo $this->formInput($form->get('submit')); ?>
+ 	<?php 
+ 	  echo "<br />";
+ 	  echo $this->formInput($form->get('submit')); 
+    ?>
  </div>
  <?php
- echo $this->form()->closeTag($form);
+    echo $this->form()->closeTag($form);
