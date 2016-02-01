@@ -4,58 +4,51 @@
  ?>
  <h1><?php echo $this->escapeHtml($title); ?></h1>
 
-			<?php 
-                echo "<strong>";
-                echo $this->escapeHtml("ID ");
-                echo "</strong>";
-                echo $this->escapeHtml($building->getId());
-                echo "<br />";
-            ?>
+<?php 
+    echo "<strong>";
+    echo $this->escapeHtml("ID ");
+    echo "</strong>";
+    echo $this->escapeHtml($building->getId());
+    echo "<br />";
 
-			<?php 
-                echo "<strong>";
-                echo $this->escapeHtml("User ");
-                echo "</strong>";
-                echo $this->escapeHtml($building->getUser());
-                echo "<br />";
-            ?>
+    echo "<strong>";
+    echo $this->escapeHtml("User ");
+    echo "</strong>";
+    echo $this->escapeHtml($building->getUser());
+    echo "<br />";
 
-			<?php
-                $building = $this->building;
-                $form = $this->form;
-                $url = $this->url('building', array('action' => 'edit', 'id' => $id));
-                $form->setAttribute('action', $url);
-                $form->get('submit')->setAttribute('value', 'Edit');
-                $form->prepare();
-                echo $this->form()->openTag($form);
-                echo $this->formHidden($form->get('id'));
-                echo $this->formHidden($form->get('user'));
-                echo $this->formRow($form->get('name'));
-                echo $this->formHidden($form->get('created'));
-                echo $this->formHidden($form->get('updated'));
-            ?>
+    $building = $this->building;
+    $form = $this->form;
+    $url = $this->url('building', array('action' => 'edit', 'id' => $id));
+    $form->setAttribute('action', $url);
+    $form->get('submit')->setAttribute('value', 'Edit');
+    $form->prepare();
+    echo $this->form()->openTag($form);
+    echo $this->formHidden($form->get('id'));
+    echo $this->formHidden($form->get('user'));
+    echo $this->formRow($form->get('name'));
+    echo $this->formHidden($form->get('created'));
+    echo $this->formHidden($form->get('updated'));
+    echo "<br />";
+ 
+    echo "<strong>";
+    echo $this->escapeHtml("Created ");
+    echo "</strong>";
+    echo $this->escapeHtml($building->getCreated());
+    echo "<br />";
 
-			<?php 
-                echo "<strong>";
-                echo $this->escapeHtml("Created ");
-                echo "</strong>";
-                echo $this->escapeHtml($building->getCreated());
-                echo "<br />";
-            ?>
+    echo "<strong>";
+    echo $this->escapeHtml("Updated ");
+    echo "</strong>";
+    echo $this->escapeHtml($building->getUpdated());
+    echo "<br />";
+?>
 
-			<?php 
-                echo "<strong>";
-                echo $this->escapeHtml("Updated ");
-                echo "</strong>";
-                echo $this->escapeHtml($building->getUpdated());
-                echo "<br />";
-            ?>
-
- <div>
- 	<?php 
- 	  echo "<br />";
- 	  echo $this->formInput($form->get('submit')); 
+<div>
+    <?php 
+      echo "<br />";
+      echo $this->formInput($form->get('submit')); 
     ?>
- </div>
- <?php
+</div>
+<?php
     echo $this->form()->closeTag($form);
